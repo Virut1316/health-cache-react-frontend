@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'reset-css';
 import NavbarScroller from './components/Navbar'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Claims from './components/claims/Claims';
 
 const navigation = {
   brand: { name: 'HealthCache', to: '/' },
@@ -18,9 +20,14 @@ export default class App extends Component {
 
     return (
       <div className="App">
+        <Router>
         <NavbarScroller brand={brand} links={links} />
-        
-        
+        <Routes>
+          <Route  path="/Profile" ></Route>
+          <Route path="/FileClaim" element={<Claims></Claims>}></Route>
+          <Route path="/Discussion" ></Route>
+          </Routes>
+        </Router>
       </div>
     );
   }
