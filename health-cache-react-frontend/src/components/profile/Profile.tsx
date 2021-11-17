@@ -33,15 +33,13 @@ const _Profile: React.FC<ProfileProps> = (props) => {
         zipcode: "98001"
 
     }
-    let date = new Date();
-    tempUser.dob = date.toDateString();
 
     const [editMode, setEditMode] = useState(false)
     const [username, setUserName] = useState(tempUser.username)
     const [password, setPassword] = useState(tempUser.password)
     const [firstName, setFirstName] = useState(tempUser.firstName)
     const [lastName, setLastName] = useState(tempUser.lastName)
-    const [dob, setDob] = useState(tempUser.dob)
+    const [dob, setDob] = useState(new Date())
     const [gender, setGender] = useState(tempUser.gender)
     const [email, setEmail] = useState(tempUser.email)
     const [phoneNo, setPhoneNo] = useState(tempUser.phoneNo)
@@ -108,8 +106,8 @@ const _Profile: React.FC<ProfileProps> = (props) => {
                                         <br/>
                                         <DatePicker className={"form-control"}
                                                     closeOnScroll={true}
-                                                    selected={date}
-                                                    onChange={(date:Date) => setDob(date.toDateString)}
+                                                    selected={dob}
+                                                    onChange={(date:Date) => setDob(date)}
                                         />
                                     </div>
                                     <div className="col-md-12"><label className="labels">Gender</label><input
@@ -192,8 +190,8 @@ const _Profile: React.FC<ProfileProps> = (props) => {
                                         <DatePicker className={"form-control"}
                                                     disabled
                                                     closeOnScroll={true}
-                                                    selected={date}
-                                                    onChange={(date:Date) => setDob(date.toDateString)}
+                                                    selected={dob}
+                                                    onChange={(date:Date) => setDob(date)}
                                         />
                                     </div>
                                     <div className="col-md-12"><label className="labels">Gender</label><input
