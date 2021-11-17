@@ -4,8 +4,7 @@ import {LoginUserAction, LogoutUserAction} from "./login";
 export enum ActionTypes{
     fetchaAllUsers,
     login,
-    logout,
-
+    logout
 }
 
 export type Action = FetchAllUsersAction | LoginUserAction | LogoutUserAction
