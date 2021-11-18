@@ -19,10 +19,10 @@ const navigation = {
   ]
 }
 
-
 export default class App extends Component {
     public render() {
         const {brand, links} = navigation;
+
 
 
     return (
